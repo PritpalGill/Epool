@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Title of Page -->
+  <title>Help</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="help.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <!-- Firebase App is always required and must be first -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+
+  <!-- Add additional services that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+     var config = {
+       
+     };
+     firebase.initializeApp(config);
+ </script>
+
+
+</head>
+
+<body>
+
+  <!-- Page Container -->
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <button type="button" id="sidebarCollapse" class="btn fixed-top float-right">
+      <i class="fas fa-bars fa-lg" style="color: white"></i>
+    </button>
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <img class="ml-4 rounded-circle" width="64px" height="64px" id="profilephotodash" src="../images/user.png">
+        <span class="h3 ml-3 align-middle" id="profileNameText">Profile Name</span>
+
+
+      </div>
+
+      <ul class="list-unstyled components">
+
+        <li>
+          <a href="dashboard.html">Dashboard</a>
+        </li>
+        <li>
+          <a href="rides.html">Rides</a>
+        </li>
+        <li>
+          <a href="createapool.html">Create a Pool</a>
+        </li>
+        <li>
+          <a href="about.html">About</a>
+        </li>
+        <li class="active">
+          <a href="help.html">Help</a>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-light fixed-bottom mb-2 ml-2" id="signOut">Sign Out</button>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+      <div id="textbox">
+        <!-- Cards that dispaly frequently asked questions -->
+        <h1>Frequently Asked Questions</h1>
+        <hr />
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+                  What is Epool?
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                For busy people, who want to save money and time, Epool app makes it easy and fast to connect with
+                other carpoolers. Unlike craigslist & facebook groups our product is a streamlined solution, with
+                automatic user matching, and more.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                  aria-controls="collapseTwo">
+                  How to post a trip?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                Make sure to enter accurate details about your trip in Create a Pool page, including precise pickup and
+                dropoff locations for passengers. Use the route name field to name your trip.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree">
+                  Pricing?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                Epool recommends a 10 cents per km price per seat on trips. However, the price can be determined
+                between passenger and driver.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                  aria-controls="collapseFour">
+                  How is Epool different from Uber or Lyft?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+              <div class="card-body">
+                Uber or Lyft drivers are employed by Uber or Lyft and earn a wage to drive people on demand. Epool
+                drivers fill empty seats in their cars on existing journeys to cover the costs of their trip, and they
+                are already driving somewhere.
+                Uber or Lyft operates inside the city in real-time, much like a taxi. Epool helps people organize
+                medium to long-distance trips between cities, usually a few days in advance.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYo4-qEUUBVeZiJbyfadRS7Z077u5tHWg&libraries=places"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+  <!-- JavaScript for collapsible side bar -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        $('#signOut').toggleClass('fixed-bottom');
+      });
+    });
+  </script>
+  <script src="../js/help.js"></script>
+
+
+
+
+</body>
+
+</html>

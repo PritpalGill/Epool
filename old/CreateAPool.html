@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Create A Pool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $(document).ready(function(){$( "#datepicker" ).datepicker({
+        showOn: "button",
+        buttonText: "Dates"
+    });});
+  </script>
+  <style>
+      body, html{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      #cont {
+        height: 100%;
+      }
+
+      #sidebar{
+        float: left;
+        box-shadow: 3px 5px 8px #888888;
+        height: 100%;
+        width: 250px;
+        height: 750px;
+        overflow: hidden;
+        font-family: Bahnschrift Condensed;
+      }
+      #main{
+          text-align: center;
+      }
+
+      #main form h1 {
+        font-size: 20pt;
+        text-shadow: 1px 1px #9b9b9b;
+      }
+
+      #routename {
+        margin-top: 30px;
+      }
+
+      .textfield {
+        padding-top: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 30px;
+        border-radius: 4px;
+        /* font-size: 15pt; */
+      }
+
+      .buttons {
+        margin-bottom: 30px;
+        width: 130px;
+        height: 45px;
+      }
+      .up:focus {
+        background-color: #1892dd;
+        color: white;
+      }
+
+      /* #dates {
+        background-color: #1892dd;
+        color: white;
+      } */
+
+      button[type="submit"] {
+        background-color: #d69142;
+        color: white;
+      }
+      #userinfo {
+        background-color: #2C98F0;
+        color: white;
+        height: 120px;
+        box-shadow: 0px 2px 5px #888888;
+      }
+
+      #userinfo p {
+        float: left;
+        transform: translate(20%, 25%);
+        color: white;
+        font-weight: bold;
+      }
+      #logo {
+          width: 80px;
+          float: left;
+          margin-top: 22px;
+          margin-left: 5px;
+      }
+
+      #username {
+          margin: 0px;
+          padding: 20px;
+          padding-top: 48px;
+          padding-left: 90px;
+      }
+
+      #sidebar a:visited {
+          color: rgb(80, 80, 80);
+      }
+
+      /* mouse over link */
+      #sidebar a:hover {
+          color: rgb(179, 179, 179);
+
+      }
+
+      /* selected link */
+      #sidebar a:active {
+          color: #2C98F0;
+      }
+
+      #sidebar a:link {
+          color: rgb(80, 80, 80);
+          text-decoration:none;
+          padding: 20px;
+      }
+
+      #sidebar h3 {
+          padding-top: 20px;
+          font-size: 20pt;
+      }
+
+      #datepicker {
+        display: none;
+      }
+
+   </style>
+</head>
+<body>
+    <div id="cont">
+      <div id="sidebar">
+        <div id="userinfo"><img id="logo" src="ResourcesDavid/icons8-customer-64.png" alt="USER"/><h2 id="username">User1</h2></div>
+        <h3><a href>Dashboard</a></h3>
+        <h3><a href>Rides</a></h3>
+        <h3><a href>Schedule</a></h3>
+        <h3><a href>History</a></h3>
+        <h3><a href>Settings</a></h3>
+        <h3><a href>About</a></h3>
+        <h3><a href>Help</a></h3>
+      </div>
+
+      <div id="main">
+        <form>
+          <input id="routename" class="textfield" type="text" name="route" placeholder="Enter Route Name">
+          <br/>
+          <h1>SELECT WHETHER DRIVER OR PASSENGER</h1>
+          <button type="button" name="driver" class="buttons up">DRIVER</button>
+          <button type="button" name="passenger" class="buttons up">PASSENGER</button>
+          <br/>
+          <input id="start" class="textfield" type="text" name="start" placeholder="Enter Starting Location">
+          <br/>
+          <input id="destination" class="textfield" type="text" name="destination" placeholder="Enter Destination">
+          <br/>
+          <input id="datepicker" type="input" name="dates" class="datepicker"></input>
+          <button type="submit" name="submit" class="buttons">SUBMIT</button>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Epool Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAXJ-_zPVCd0bOd6PpOyV1oE_wylsHpWWM",
+    authDomain: "projects-group-30-database.firebaseapp.com",
+    databaseURL: "https://projects-group-30-database.firebaseio.com",
+    projectId: "projects-group-30-database",
+    storageBucket: "projects-group-30-database.appspot.com",
+    messagingSenderId: "15248780008"
+  };
+  firebase.initializeApp(config);
+</script>
+  <style>
+      body{
+          margin: 0;
+          padding: 0;
+      }
+      #logo {
+          width: 80px;
+          float: left;
+          margin-top: 22px;
+          margin-left: 5px;
+
+      }
+
+      #logo2 {
+          width: 130px;
+          float: right;
+          margin-top: 30px;
+          margin-right: 10px;
+
+      }
+      .sidebar{
+          float: left;
+        box-shadow: 3px 5px 8px #888888;
+        height: 100%;
+        width: 20%;
+        margin-top: -90px;
+        height: 750px;
+        overflow: hidden;
+        font-family: Bahnschrift Condensed;
+        
+      }
+
+      .sidebar h3 {
+          padding-top: 20px;
+          font-size: 20pt;
+          
+          
+
+      }
+      .main{
+          text-align: center;
+      }
+      .schedule{
+        box-shadow: 3px 5px 8px #888888;
+        text-align: left;
+        margin-left: 470px;
+        margin-right: 190px;
+        margin-top: 80px;
+        background-color:rgb(233, 232, 232);
+        padding: 10px;
+
+      }
+
+      .more{
+
+        display: none;
+
+      }
+
+      .why{
+          padding: 0;
+          margin-bottom: 0;
+          color:#2C98F0;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      .tom{
+        margin: 0;
+          font-size: 20pt;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      .mor{
+
+        font-size: 9pt;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      .say{
+padding-bottom: 60px;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      .button1, .button2{
+        background-color: #2C98F0;
+        border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 1px 2px 5px #888888;
+          padding: 20px;
+          font-size: 35pt;
+          margin-right: 45px;
+          margin-left: 45px;
+          margin-bottom: 50px;
+          margin-top: 80px;
+
+      }
+
+
+
+       a:link {
+    color: rgb(255, 255, 255);
+    text-decoration:none;
+        }
+
+        /* visited link */
+        a:visited {
+            color: rgb(255, 255, 255);
+        }
+
+        /* mouse over link */
+         a:hover {
+            color: rgb(197, 197, 197);
+        }
+
+        /* selected link */
+         a:active {
+            color: rgb(0, 0, 0);
+        }
+
+      .userinfo {
+          background-color: #2C98F0;
+          color: white;
+          height: 120px;
+          box-shadow: 0px 2px 5px #888888;
+
+                }
+
+        .username {
+            margin: 0px;
+            padding: 20px;
+            padding-top: 48px;
+            padding-left: 90px;
+        }
+
+        .sidebar a:link {
+    color: rgb(80, 80, 80);
+
+    text-decoration:none;
+    padding: 20px;
+
+        }
+
+        /* visited link */
+        .sidebar a:visited {
+            color: rgb(80, 80, 80);
+        }
+
+        /* mouse over link */
+        .sidebar a:hover {
+            color: rgb(179, 179, 179);
+
+        }
+
+        /* selected link */
+        .sidebar a:active {
+            color: #2C98F0;
+        }
+   </style>
+   </head>
+<body>
+    <div class="cont">
+    <div class="sidebar">
+        <div class="userinfo">
+                <img id= "logo" src="resourcesDavid/icons8-customer-64.png" alt="Epool">
+            <h2 class = "username">User1</h2>
+        </div>
+        <h3><a href class = "main">Dashboard</a></h3>
+        <h3><a href>Rides</a></h3>
+        <h3><a href>Schedule</a></h3>
+        <h3><a href>History</a></h3>
+        <h3><a href>Settings</a></h3>
+        <h3><a href>About</a></h3>
+        <h3><a href=>Help</a></h3>
+
+    </div>
+    <div class="main">
+            <div class="schedule">
+                    <img id= "logo2" src="resourcesDavid/icons8-customer-64.png" alt="Epool">
+                <p class="mor">SHEDULE</p>
+                <h4 class="tom">Tomorrow</h4>
+                <p class="say">From home to work at 7:00 AM with Kyle</p>
+                <div class="more">
+                    <h1>I WILL ADD MORE LATER, DONT WORRY</h1>
+                </div>
+                <h3 class= "why">MORE</h3>
+            </div>
+            
+            <div class="nav">
+                    <button class="button1">
+                            <a href = "CreateAPool.html">Create a Pool</a>
+                          </button>
+                          <button class="button2">
+                                <a href>View Car-Pools</a>
+                            </button>
+            </div>
+            
+            
+
+    </div>
+
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        /*<![CDATA[*/
+        $(document).ready(function() {
+  
+  $(".why").click(function()
+  {
+    
+    $(".more").slideToggle( "slow");
+    
+	  if ($(".why").text() == "MORE")
+      {			
+        $(".why").html("LESS")
+      }
+	  else 
+      {		
+        $(".why").text("MORE")
+      }
+    
+  });  
+  
+});
+</script>
+ <script>
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    </script>
+     
+  
+          <script>
+            firebase.auth().onAuthStateChanged(user => {
+  if(!user) {
+    window.location = 'Log.html'; //If User is not logged in, redirect to login page
+  }
+});
+          </script>
+
+
+  </body>
+</html>

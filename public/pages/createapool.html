@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>Epool Create</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="createapool.css" rel="stylesheet">
+  <link href="../css/jquery.timepicker.css" rel="stylesheet">
+  <link href="../css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <!-- Firebase App is always required and must be first -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+
+  <!-- Add additional services that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+     var config = {
+ 
+     };
+     firebase.initializeApp(config);
+ </script>
+
+
+</head>
+
+<body>
+
+  <!-- Container of page -->
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <button type="button" id="sidebarCollapse" class="btn fixed-top float-right">
+      <i class="fas fa-bars fa-lg" style="color: white"></i>
+    </button>
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <img class="ml-4 rounded-circle" width="64px" height="64px" id="profilephotodash" src="../images/user.png">
+        <span class="h3 ml-3 align-middle" id="profileNameText">Profile Name</span>
+
+
+      </div>
+
+      <ul class="list-unstyled components">
+
+        <li>
+          <a href="dashboard.html">Dashboard</a>
+        </li>
+        <li>
+          <a href="rides.html">Rides</a>
+        </li>
+        <li class="active">
+          <a href="createapool.html">Create a Pool</a>
+        </li>
+        <li>
+          <a href="about.html">About</a>
+        </li>
+        <li>
+          <a href="help.html">Help</a>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-light fixed-bottom mb-2 ml-2" id="signOut">Sign Out</button>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+      <!-- Form used to submit user route information -->
+      <form">
+        <legend class="text-center mb-5 h1" id="formtitle">Create A Pool <br> <span style="font-size: 12pt;">All fields
+            are required</span></legend>
+
+        <!-- Text Input | Text input-->
+        <div class="form-group row justify-content-center">
+          <label class="col-2 col-form-label text-right" for="textinput">Enter Pool Name</label>
+          <div class="col-3">
+            <input aria-describedby="textinputHelpBlock" id="textinput" name="textinput" type="text" placeholder="Pool Name"
+              class="form-control input-md" required>
+            <small id="textinputHelpBlock" class="text-muted">Enter a unique pool name to identify this pool</small>
+          </div>
+        </div>
+
+        <!-- Multiple Radios | Multiple Radios -->
+        <div class="form-group row justify-content-center">
+          <label class="col-2 col-form-label text-right">Select whether passenger or driver</label>
+          <div class="col-3">
+            <div class="radio">
+              <label for="radios-0">
+                <input type="radio" name="radios" id="radios-0" value="Passenger">
+                Passenger
+              </label>
+            </div>
+            <div class="radio">
+              <label for="radios-1">
+                <input type="radio" name="radios" id="radios-1" value="Driver">
+                Driver
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Input for departure location -->
+        <div class="form-group row justify-content-center">
+          <label class="col-2 col-form-label text-right" for="autocomplete">Enter Departure Location</label>
+          <div id="locationField" class="col-3">
+            <input id="autocomplete" placeholder="Departure" type="text" required></input>
+          </div>
+        </div>
+        <!-- Input for destination location -->
+        <div class="form-group row justify-content-center">
+          <label class="col-2 col-form-label text-right" for="autocomplete2">Enter Destination Location</label>
+          <div id="locationField2" class="col-3">
+            <input id="autocomplete2" placeholder="Destination" type="text" required></input>
+          </div>
+        </div>
+        <!-- Input for Time of departure -->
+        <div class="form-group row justify-content-center">
+          <label class="col-2 col-form-label text-right" for="timeinput">Enter Departure Time</label>
+          <div class="col-3">
+            <input aria-describedby="timeinputHelpBlock" id="timeinput" name="timeinput" type="text" placeholder="Time"
+              class="form-control input-md" required>
+          </div>
+        </div>
+        <!-- Input for date of departure -->
+        <div class="form-group row justify-content-center">
+          <label class="col-2 col-form-label text-right" for="dateinput">Enter Date</label>
+          <div class="col-3 date">
+            <input aria-describedby="timeinputHelpBlock" id="dateinput" name="dateinput" type="text" placeholder="Date"
+              class="form-control input-md" required>
+
+          </div>
+        </div>
+
+
+        <!-- Single Button | Button -->
+        <div class="form-group row justify-content-center mt-5">
+
+          <div id="createapoolsubmit">
+            <!-- Submit Button -->
+            <button id="singlebutton" name="singlebutton" type="submit" class="btn btn-primary btn-xlg">Create Pool</button>
+          </div>
+        </div>
+
+        </form>
+
+
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYo4-qEUUBVeZiJbyfadRS7Z077u5tHWg&libraries=places"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+
+
+  <script src="../js/jquery.timepicker.min.js"></script>
+
+  <script src="../js/create.js"></script>
+  <!-- JavaScript for page functions -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //Time input box function
+      $('#timeinput').timepicker({
+        'scrollDefault': 'now'
+      });
+      //Date input box function
+      $('#dateinput').datepicker();
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+      //JavaScript for collapsible side bar
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        $('#signOut').toggleClass('fixed-bottom');
+      });
+    });
+  </script>
+  <script>
+
+  </script>
+
+
+
+</body>
+
+</html>

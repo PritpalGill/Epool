@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Epool Log-In</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAXJ-_zPVCd0bOd6PpOyV1oE_wylsHpWWM",
+    authDomain: "projects-group-30-database.firebaseapp.com",
+    databaseURL: "https://projects-group-30-database.firebaseio.com",
+    projectId: "projects-group-30-database",
+    storageBucket: "projects-group-30-database.appspot.com",
+    messagingSenderId: "15248780008"
+  };
+  firebase.initializeApp(config);
+</script>
+  </script>
+  <style>
+      .login {
+          text-align: center;
+      }
+      #logo {
+          width: 400px;
+          margin-bottom: 30px;
+          margin-top: 90px;
+      }
+      .user{
+          padding-right: 90px;
+          width: 250px;
+          padding-top: 20px;
+          margin-bottom: 30px;
+          border: none;
+          background-color: rgb(233, 232, 232);
+    border-bottom: 2px solid rgb(179, 179, 179);
+    border-radius: 2px;
+      }
+      .password{
+        padding-right: 90px;
+        width: 250px;
+          padding-top: 20px;
+          border: none;
+          background-color: rgb(233, 232, 232);
+    border-bottom: 2px solid rgb(179, 179, 179);
+    border-radius: 2px;
+      }
+      .forgot{
+          font-size: 8pt;
+          margin-left: -200px;
+          margin-bottom: 30px;
+
+      }
+
+      .in{
+        background-color: #2C98F0;
+        border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+          margin-bottom: 10px;
+          box-shadow: 1px 2px 5px #888888;
+      }
+      .up{
+        text-decoration:none
+      }
+      .forg{
+        text-decoration:none;
+        font-size: 8pt;
+          margin-left: -235px;
+          margin-bottom: 30px;
+      }
+
+      a:link {
+    color: #2C98F0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        /* visited link */
+        a:visited {
+            color: rgb(28, 100, 158);
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: rgb(119, 185, 240);
+        }
+
+        /* selected link */
+        a:active {
+            color: rgb(240, 44, 44);
+        }
+
+   </style>
+   </head>
+<body>
+  <script>
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  </script>
+    <div class="login">
+        <img id= "logo" src="resourcesDavid/Untitled (2).png" alt="Epool">
+          <div id="firebaseui-auth-container"></div>
+        </div>
+
+        <script>
+          var uiConfig = {
+          callbacks: {
+            signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+              // User successfully signed in.
+              // Return type determines whether we continue the redirect automatically
+              // or whether we leave that to developer to handle.
+              return true;
+            },
+            uiShown: function() {
+              // The widget is rendered.
+              // Hide the loader.
+              document.getElementById('loader').style.display = 'none';
+            }
+          },
+          // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+          signInFlow: 'popup',
+          signInSuccessUrl: 'Dash.html',
+          signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+
+            firebase.auth.EmailAuthProvider.PROVIDER_ID
+          ],
+          // Terms of service url.
+          tosUrl: 'main.html',
+          // Privacy policy url.
+          privacyPolicyUrl: 'main.html'
+        };
+
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+
+  </body>
+</html>

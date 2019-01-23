@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>About Epool</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="about.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <!-- Firebase App is always required and must be first -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+
+  <!-- Add additional services that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+     var config = {
+         
+     };
+     firebase.initializeApp(config);
+ </script>
+
+
+</head>
+
+<body>
+
+
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <button type="button" id="sidebarCollapse" class="btn fixed-top float-right">
+      <i class="fas fa-bars fa-lg" style="color: white"></i>
+    </button>
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <img class="ml-4 rounded-circle" id="profilephotodash" width="64px" height="64px" src="../images/user.png">
+        <span class="h3 ml-3 align-middle" id="profileNameText">Profile Name</span>
+
+
+      </div>
+
+      <ul class="list-unstyled components">
+
+        <li>
+          <a href="dashboard.html">Dashboard</a>
+        </li>
+        <li>
+          <a href="rides.html">Rides</a>
+        </li>
+        <li>
+          <a href="createapool.html">Create a Pool</a>
+        </li>
+        <li class="active">
+          <a href="about.html">About</a>
+        </li>
+        <li>
+          <a href="help.html">Help</a>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-light fixed-bottom mb-2 ml-2" id="signOut">Sign Out</button>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+      <div id="textbox">
+        <h1>Discover Epool</h1>
+        <hr />
+        <img src="../images/logo.png" alt="Epool logo" />
+        <p>Epool is a leading carpool search website, a place where people are inspired to plan and book direct from
+          tons of options in Greater Vancouver area.</p>
+        <p>Epool was created in 2018 to assist in the formation and management of carpools in Vancouver. The Epool
+          application uses home & destination locations, driving route and other personal information to help commuters
+          identify potential carpool partners. The system is fast, secure and simple to use.</p>
+        <p>Epool offers these services to commuters in partnership with employers, post-secondary institutions, and
+          regional governments. The program is hosted, managed and updated by Epool staff. There is no cost to
+          commuters using this service. Partners have access to their data and have the option of generating
+          administrative and statistical reports.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <!-- JavaScript Library for date picker, time picker and Google Maps -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYo4-qEUUBVeZiJbyfadRS7Z077u5tHWg&libraries=places"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+  <!-- JavaScript for collapsible side bar -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        $('#signOut').toggleClass('fixed-bottom');
+      });
+    });
+  </script>
+  <script src="../js/about.js"></script>
+
+
+
+
+</body>
+
+</html>
