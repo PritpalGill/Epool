@@ -26,7 +26,7 @@ Pritpal Gill - Executive Chief Full-Stack Developer, Technical Expert
 
 Bongchul Sin - Executive  Full-Stack Developer, Independant Tester
 
-David Delatycki - Cheif Executive Full-Stack Developer, Scrum Master
+David Delatycki - Chief Executive Full-Stack Developer, Scrum Master
 
 Acknowledgments
 ---------------
