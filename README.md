@@ -22,7 +22,7 @@ Version
 
 Authors
 -------
-Pritpal Gill - Executive Cheif Full-Stack Developer, Technical Expert
+Pritpal Gill - Executive Chief Full-Stack Developer, Technical Expert
 
 Bongchul Sin - Executive  Full-Stack Developer, Independant Tester
 
